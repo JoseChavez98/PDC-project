@@ -1,6 +1,6 @@
 #include <iostream>
 #include "montecarlo.h"
-#include <chrono> 
+#include <chrono>
 using namespace std::chrono;
 
 int main(){
@@ -18,7 +18,7 @@ int main(){
     auto r = URDMonteCarloIntegration(a,b,times[i]);
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
-    printf("%f  %lld seconds\n", r ,duration.count());
+    printf("%f  %lld microseconds\n", r ,duration.count());
   }
 
   printf("\n RNGMonteCarloIntegration \n");
@@ -29,9 +29,9 @@ int main(){
     auto r = RNGMonteCarloIntegration(a,b,times[i]);
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
-    printf("%f  %lld seconds\n", r ,duration.count());
+    printf("%f  %lld microseconds\n", r ,duration.count());
   }
 
-  
+
   return 0;
 }
